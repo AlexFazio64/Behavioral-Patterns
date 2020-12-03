@@ -1,4 +1,4 @@
-# Structural Patterns
+# Behavioral Patterns
 Graphical demos for Structural Patterns
 
 switch branch to view different examples
