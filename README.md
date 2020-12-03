@@ -1,2 +1,4 @@
-# Behavioral-Patterns
-Graphical Demos for Beavioural Patterns
+# Structural Patterns
+Graphical demos for Structural Patterns
+
+switch branch to view different examples
