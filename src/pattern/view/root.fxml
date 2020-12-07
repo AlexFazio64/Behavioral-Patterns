@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pattern.controller.RootController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pattern.controller.RootController">
+	<BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+	            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		<bottom>
+			<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+				<Button layoutX="240.0" layoutY="45.0" mnemonicParsing="false" onAction="#next1" text="next 1"/>
+				<Button layoutX="315.0" layoutY="45.0" mnemonicParsing="false" onAction="#next2" text="next 2"/>
+				<Button layoutX="165.0" layoutY="45.0" mnemonicParsing="false" onAction="#clear" text="clear"/>
+			</HBox>
+		</bottom>
+		<center>
+			<ScrollPane fitToHeight="true" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER"
+			            BorderPane.alignment="CENTER">
+				<HBox fx:id="hbox" alignment="CENTER" prefWidth="200.0" spacing="10.0"/>
+			</ScrollPane>
+		</center>
+	</BorderPane>
 </AnchorPane>
