@@ -7,14 +7,6 @@ public class LoginMediator extends Mediator {
 	ColoredLabel passLbl;
 	LoginButton loginButton;
 	
-	public LoginMediator() {
-		this.userField = null;
-		this.passField = null;
-		this.userLbl = null;
-		this.passLbl = null;
-		this.loginButton = null;
-	}
-	
 	public void add(Component... list) {
 		this.userField = (UserField) list[0];
 		this.passField = (PwdField) list[1];
@@ -25,23 +17,21 @@ public class LoginMediator extends Mediator {
 	
 	@Override
 	public void notifica(Component sender, String context) {
-		System.out.println("dialog riceve una notifica");
 		if ( sender == loginButton ) {
-			System.out.println("è login");
 			String username = userField.getValue();
 			String password = passField.getValue();
-			System.out.println(username.equals(password) ? "si" : "no");
+			loginButton.setColor(username.equals(password) ? "#00FF00" : "FF0000");
 		} else if ( sender == userField ) {
-			System.out.println("è userField");
-			String username = userField.getValue();
-			if ( username.length() > 5 ) {
-				userLbl.setColor("#7E11BF");
+			if ( context.equals("long") ) {
+				userLbl.setColor("#00FF00");
+			} else if ( context.equals("short") ) {
+				userLbl.setColor("#FF0000");
 			}
 		} else if ( sender == passField ) {
-			System.out.println("è password");
-			String password = passField.getValue();
-			if ( password.length() > 5 ) {
-				passLbl.setColor("#c6e7a0");
+			if ( context.equals("long") ) {
+				passLbl.setColor("#00FF00");
+			} else if ( context.equals("short") ) {
+				passLbl.setColor("#FF0000");
 			}
 		}
 	}

@@ -3,7 +3,7 @@ package pattern.mediator;
 import javafx.scene.control.TextField;
 
 public class UserField extends Component {
-	private TextField userFld;
+	private final TextField userFld;
 	
 	public UserField(Mediator dialog, TextField userFld) {
 		super(dialog);
@@ -17,7 +17,6 @@ public class UserField extends Component {
 	
 	@Override
 	public void notifica() {
-		System.out.println("userField notifica il dialog");
-		super.dialog.notifica(this, "user_input");
+		super.dialog.notifica(this, userFld.getText().length() < 5 ? "short" : "long");
 	}
 }

@@ -17,6 +17,6 @@ public class PwdField extends Component {
 	
 	@Override
 	public void notifica() {
-		super.dialog.notifica(this, "pass_input");
+		super.dialog.notifica(this, passwordFld.getText().length() < 5 ? "short" : "long");
 	}
 }

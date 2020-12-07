@@ -14,32 +14,35 @@ public class RootController {
 	public PasswordField passFld;
 	public Label userLbl;
 	public Label passLbl;
-	UserField a;
-	PwdField b;
-	ColoredLabel c;
-	ColoredLabel d;
-	LoginButton e;
+	
+	UserField userField;
+	PwdField pwdField;
+	ColoredLabel usrLbl;
+	ColoredLabel pwdLbl;
+	LoginButton loginButton;
 	LoginMediator dialog;
 	
 	public void initialize() {
 		dialog = new LoginMediator();
-		a = new UserField(dialog, usrFld);
-		b = new PwdField(dialog, passFld);
-		c = new ColoredLabel(dialog, userLbl);
-		d = new ColoredLabel(dialog, passLbl);
-		e = new LoginButton(dialog, loginBtn);
-		dialog.add(a, b, c, d, e);
+		
+		userField = new UserField(dialog, usrFld);
+		pwdField = new PwdField(dialog, passFld);
+		usrLbl = new ColoredLabel(dialog, userLbl);
+		pwdLbl = new ColoredLabel(dialog, passLbl);
+		loginButton = new LoginButton(dialog, loginBtn);
+		
+		dialog.add(userField, pwdField, usrLbl, pwdLbl, loginButton);
 	}
 	
 	public void inputUSR(KeyEvent keyEvent) {
-		a.notifica();
+		userField.notifica();
 	}
 	
 	public void loginBRO(ActionEvent actionEvent) {
-		e.notifica();
+		loginButton.notifica();
 	}
 	
 	public void inputURSS(KeyEvent keyEvent) {
-		b.notifica();
+		pwdField.notifica();
 	}
 }
