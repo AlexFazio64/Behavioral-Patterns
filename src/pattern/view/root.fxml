@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pattern.controller.RootController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pattern.controller.RootController">
+	<BorderPane layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0"
+	            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		<center>
+			<BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+				<bottom>
+					<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<center>
+								<Button fx:id="contains" mnemonicParsing="false" onAction="#execContains"
+								        text="Contains" BorderPane.alignment="CENTER"/>
+							</center>
+						</BorderPane>
+						<BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+							<center>
+								<Button fx:id="literal" mnemonicParsing="false" onAction="#execLiteral" text="Literal"
+								        BorderPane.alignment="CENTER"/>
+							</center>
+						</BorderPane>
+						<BorderPane layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+							<center>
+								<Button fx:id="uppercase" mnemonicParsing="false" onAction="#execUppercase"
+								        text="Uppercase" BorderPane.alignment="CENTER"/>
+							</center>
+						</BorderPane>
+					</HBox>
+				</bottom>
+				<BorderPane.margin>
+					<Insets/>
+				</BorderPane.margin>
+				<center>
+					<VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+						<HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+							<padding>
+								<Insets left="10.0" right="10.0"/>
+							</padding>
+							<BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0"
+							            HBox.hgrow="ALWAYS">
+								<center>
+									<Label text="Expression Evaluation" BorderPane.alignment="CENTER">
+										<font>
+											<Font size="30.0"/>
+										</font>
+									</Label>
+								</center>
+							</BorderPane>
+						</HBox>
+						<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0"
+						      VBox.vgrow="ALWAYS">
+							<padding>
+								<Insets left="10.0" right="10.0"/>
+							</padding>
+							<BorderPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+								<center>
+									<TextField fx:id="exp1" alignment="CENTER" promptText="expression"
+									           BorderPane.alignment="CENTER"/>
+								</center>
+							</BorderPane>
+							<BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0"
+							            HBox.hgrow="ALWAYS">
+								<center>
+									<TextField fx:id="exp2" alignment="CENTER" promptText="expression"
+									           BorderPane.alignment="CENTER"/>
+								</center>
+							</BorderPane>
+						</HBox>
+						<HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0"
+						      spacing="20.0">
+							<BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0"
+							            HBox.hgrow="ALWAYS">
+								<center>
+									<Label fx:id="result" text="Result : " BorderPane.alignment="CENTER">
+										<font>
+											<Font size="24.0"/>
+										</font>
+									</Label>
+								</center>
+							</BorderPane>
+						</HBox>
+					</VBox>
+				</center>
+			</BorderPane>
+		</center>
+	</BorderPane>
 </AnchorPane>
