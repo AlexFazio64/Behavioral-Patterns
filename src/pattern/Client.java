@@ -10,14 +10,18 @@ public class Client extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("view/root.fxml"));
 		primaryStage.setScene(new Scene(loader.load()));
-		primaryStage.setTitle("TITLE");
+		primaryStage.setTitle("Chain of responsibility");
 		primaryStage.setResizable(false);
-		primaryStage.setWidth(600);
+		primaryStage.setWidth(800);
 		primaryStage.setHeight(400);
 		primaryStage.show();
 	}
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	public static String getRes(String name) {
+		return Client.class.getResource("resources/" + name).toString();
 	}
 }

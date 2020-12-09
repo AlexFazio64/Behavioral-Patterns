@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pattern.controller.RootController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="800.0"
+            fx:controller="pattern.controller.RootController">
+	<BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+	            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		<top>
+			<Label text="Chain of Responsibility" BorderPane.alignment="CENTER">
+				<font>
+					<Font size="30.0"/>
+				</font>
+			</Label>
+		</top>
+		<center>
+			<HBox fx:id="main" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0"
+			      BorderPane.alignment="CENTER"/>
+		</center>
+		<bottom>
+			<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+				<TextField fx:id="expr" alignment="CENTER" onAction="#sendRequest" prefWidth="300.0"
+				           promptText="&lt;color|fabric|material&gt;:&lt;Hex|1-6&gt;"/>
+				<Button mnemonicParsing="false" onAction="#sendRequest" text="Try"/>
+			</HBox>
+		</bottom>
+	</BorderPane>
 </AnchorPane>
