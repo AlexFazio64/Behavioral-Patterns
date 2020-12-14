@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pattern.controller.RootController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pattern.controller.RootController">
+	<BorderPane fx:id="pane" layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0"
+	            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+	            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		<top>
+			<Label text="State" BorderPane.alignment="CENTER">
+				<font>
+					<Font size="30.0"/>
+				</font>
+			</Label>
+		</top>
+		<bottom>
+			<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+				<BorderPane.margin>
+					<Insets left="20.0" right="20.0"/>
+				</BorderPane.margin>
+				<Label text="a(bcf)*d(e)*" HBox.hgrow="ALWAYS">
+					<font>
+						<Font size="24.0"/>
+					</font>
+				</Label>
+				<TextField fx:id="string" alignment="CENTER" prefWidth="250.0" HBox.hgrow="ALWAYS">
+					<font>
+						<Font size="24.0"/>
+					</font>
+				</TextField>
+				<Button mnemonicParsing="false" onAction="#set" text="set" HBox.hgrow="ALWAYS"/>
+				<Button layoutX="531.0" layoutY="48.0" mnemonicParsing="false" onAction="#next" text="evaluate"/>
+			</HBox>
+		</bottom>
+	</BorderPane>
 </AnchorPane>

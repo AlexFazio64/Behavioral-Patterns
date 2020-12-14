@@ -13,11 +13,15 @@ public class Client extends Application {
 		primaryStage.setTitle("TITLE");
 		primaryStage.setResizable(false);
 		primaryStage.setWidth(600);
-		primaryStage.setHeight(400);
+		primaryStage.setHeight(600);
 		primaryStage.show();
 	}
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	public static String getRes(String name) {
+		return Client.class.getResource("resources/" + name).toString();
 	}
 }
